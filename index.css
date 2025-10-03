@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+main {
+    width: 100vw;
+    height: 100%;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5em;
+}
+#mode-select {
+    width: 60%;
+  
+}
+#mode-select, button  {
+      padding: 1em;
+}
+input{
+    height: 50px;
+    width: 50px;
+}
+
+#color-scheme {
+    margin: 1em;
+    display: flex;
+}
+
+.color-box {
+    width: 120px;
+    height: 65vh;
+    border-radius: 5px;
+}
+
+p {
+    text-align: center;
+    padding: 0.5em;
+}
+
+
+
+@media(min-width: 789px) {
+    .container, #color-scheme {
+        margin: 1em 4em;
+    
+    }
+   .color-box {
+    width: 230px;
+    height: 70vh;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+p{
+    text-align: center;
+}
+    #mode-select {
+        width: 70%;
+    }
+
+}
