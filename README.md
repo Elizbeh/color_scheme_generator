@@ -39,7 +39,8 @@ Features
 Screenshots
 -----------
 
-*(replace with your own screenshot if you like)*
+![App Screenshot 1](images/screenshot1.png)
+![App Screenshot 2](images/screenshot2.png)
 
 * * * * *
 
