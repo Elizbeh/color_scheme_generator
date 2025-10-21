@@ -32,11 +32,11 @@ btn.addEventListener("click", () => {
                 text.style.cursor = "pointer";
                 text.title = "Click to copy";
 
-                // Click-to-copy with fallback
+                // Click-to-copy with UI feedback
                 text.addEventListener("click", () => {
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText(hexValue)
-                            .then(() => alert(`Copied ${hexValue} to clipboard!`))
+                            .then(() => showCopyMessage(text, hexValue))
                             .catch(err => console.error("Failed to copy:", err));
                     } else {
                         // Fallback for older browsers
@@ -46,13 +46,13 @@ btn.addEventListener("click", () => {
                         textarea.select();
                         document.execCommand("copy");
                         document.body.removeChild(textarea);
-                        alert(`Copied ${hexValue} to clipboard!`);
+                        showCopyMessage(text, hexValue);
                     }
                 });
 
                 // Append elements
                 wrapper.appendChild(div);
-                wrapper.appendChild(text); // hex text below color box
+                wrapper.appendChild(text); 
                 colorScheme.appendChild(wrapper);
             });
         })
@@ -61,3 +61,19 @@ btn.addEventListener("click", () => {
             alert("Failed to fetch color scheme. Try a different color or mode.");
         });
 });
+
+// Helper: show small "Copied!" message next to hex
+function showCopyMessage(element, hexValue) {
+    const existingMsg = element.parentElement.querySelector(".copy-msg");
+    if (existingMsg) existingMsg.remove();
+
+    const msg = document.createElement("span");
+    msg.textContent = `Copied ${hexValue}`;
+    msg.classList.add("copy-msg");
+    element.parentElement.appendChild(msg);
+
+    setTimeout(() => {
+        msg.style.opacity = "0";
+        setTimeout(() => msg.remove(), 500);
+    }, 1500);
+}
