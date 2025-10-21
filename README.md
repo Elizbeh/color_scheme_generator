@@ -42,7 +42,7 @@ Screenshots
 ![App Screenshot 1](images/screenshot1.png)
 ![App Screenshot 2](images/screenshot2.png)
 ![App Screenshot 3](images/screenshot3.png)
-![App Screenshot 4](images/screenshot6.png)
+![App Screenshot 4](images/screenshot4.png)
 
 * * * * *
 
